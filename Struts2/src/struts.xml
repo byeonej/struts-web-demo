@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+    <package name="hello" extends="struts-default">
+      <action name="hello" class="hello.HelloWorldAction">
+        <result>/result.jsp</result>
+      </action>
+    </package>
+    
+    <package name="struts2" extends="struts-default">
+
+    <action name="user" class="login.action.UserAction">
+    <result>/form1/save_ok.jsp</result>
+    <result name="error">/form1/error.jsp</result>
+    </action>
+
+    <action name="user2" class="login.action.UserAction2">
+    <result>/form2/save_ok2.jsp</result>
+    <result name="error">/form1/error.jsp</result>
+    </action>
+
+	<action name="user3" class="login.action.UserAction3">
+    <interceptor-ref name="prepare" />
+    <interceptor-ref name="modelDriven" />
+    <interceptor-ref name="params" />
+    <result>/form2/save_ok2.jsp</result>
+    <result name="error">/form1/error.jsp</result>
+    </action>
+    
+    
+    </package>
+    
+    
+    
+</struts>
+
+
